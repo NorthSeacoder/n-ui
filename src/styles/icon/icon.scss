@@ -1,0 +1,33 @@
+@charset 'UTF-8';
+
+@font-face {
+    font-family: "n-ui-font";
+    src: url("./n-ui.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="n-icon-"]:before,
+[class*=" n-icon-"]:before {
+    font-family: "n-ui-font", sans-serif !important;
+    speak: none;
+    line-height: 1;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.n-icon-yuque:before { content: "\e001"; }
+.n-icon-n:before { content: "\e002"; }
+.n-icon-qq:before { content: "\e003"; }
+.n-icon-wx:before { content: "\e004"; }
+.n-icon-phone:before { content: "\e005"; }
+.n-icon-util:before { content: "\e006"; }
+.n-icon-blog:before { content: "\e007"; }
+.n-icon-cv:before { content: "\e008"; }
+.n-icon-wxmp:before { content: "\e009"; }
+.n-icon-github:before { content: "\e00a"; }
+.n-icon-mail:before { content: "\e00b"; }
+.n-icon-search:before { content: "\e00c"; }

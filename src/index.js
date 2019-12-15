@@ -1,4 +1,5 @@
 import NButton from './packages/n-button'
+import './styles/icon/icon.scss';
 
 const components = {
    NButton,
