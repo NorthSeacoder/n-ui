@@ -1,15 +1,14 @@
-import NButton from './packages/n-button'
+import component from './packages'
+import plugin from './plugin'
 import './styles/icon/icon.scss';
 
-const components = {
-   NButton,
-}
+export default {
 
-const install = function (Vue, options = {}) {
+  install(Vue, options = {}) {
+      Vue.use(component);
+      // Vue.use(directive);
+      // Vue.use(filter);
+      Vue.use(plugin, options);
+  }
 
-  Object.keys(components).forEach(key => {
-    Vue.component(key, components[key]);
-  });
-}
-
-export default install
+};
