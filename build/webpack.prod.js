@@ -18,7 +18,7 @@ module.exports = merge(webpackBaseConfig, {
     filename: 'n-ui.min.js',  // 改成自己的类库名
     library: 'n-ui', // 类库导出
     libraryTarget: 'umd',
-    umdNamedDefine: true
+    umdNamedDefine: true,
   },
   externals: { // 外部化对vue的依赖
     vue: {

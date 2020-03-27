@@ -115,6 +115,9 @@ module.exports = {
       '@': resolve('src')
     }
   },
+  output: {
+    globalObject: 'this'
+  },
   plugins: [
     new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.DefinePlugin({
