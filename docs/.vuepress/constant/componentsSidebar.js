@@ -17,7 +17,7 @@ module.exports = [
       title: 'Form',
       collapsable: false,
       children: [
-        "",'Calendar','Cascader-Select','Date','Form','Input','Select','Switch'
+        "",'Calendar','Cascader-Select','Date','Input','Select','Switch'
       ]
     },
   ]
