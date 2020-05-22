@@ -27,4 +27,5 @@ jobs:
           BASE_BRANCH: master # The branch the action should deploy from.
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: docs/.vuepress/dist # The folder the action should deploy.
-          BUILD_SCRIPT: npm install && npm run-script docs:build # The build script the action should run prior to deploying.
+          CNAME: www.nsc.best
+          BUILD_SCRIPT: npm install && npm run docs:build # The build script the action should run prior to deploying.
