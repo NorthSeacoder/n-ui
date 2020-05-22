@@ -21,11 +21,9 @@ jobs:
         uses: actions/checkout@master
 
       - name: Build and Deploy
-        uses: grasilife/github-pages-deploy-action@master
+        uses: jenkey2011/vuepress-deploy@master
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BASE_BRANCH: master # The branch the action should deploy from.
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: docs/.vuepress/dist # The folder the action should deploy.
-          CNAME: www.nsc.best
-          BUILD_SCRIPT: npm install && npm run docs:build # The build script the action should run prior to deploying.
+          BUILD_SCRIPT: npm install && npm run docs:build
+          BUILD_DIR: docs/.vuepress/dist
+          CNAME: nsc.best
