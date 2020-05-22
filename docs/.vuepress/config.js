@@ -12,17 +12,9 @@ module.exports = {
           { text: '指南', link: '/guide/' },
           { text: '组件', link: '/components/' },
         ],
+        sidebarDepth:0,
         sidebar: {
-          '/components/':[{
-            title:' 组件',
-            collapsable: false,
-            children:[
-              'plugin',
-              'basic',
-              'form',
-            ]
-          }]
+          '/components/':require('./constant/componentsSidebar')
         }
-        
       }
 };

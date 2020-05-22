@@ -1,7 +1,8 @@
 import NButton from './n-button';
+import NCalendar from './calendar';
 
 const components = {
-    NButton
+    NButton,NCalendar
 };
 
 // const install = function(Vue, options = {}) {

@@ -1,10 +1,7 @@
-# Plugin
-
-## Toast 提示
-
+# Taost 弹框
 用于主动操作后的反馈
 
-### 不同状态
+## 不同状态
    有三种不同 toast
    
 <template>
@@ -32,20 +29,10 @@ export default {
 }
 </script>
 
-### usage
+## usage
 
 ```js
 vm.$toast.success('success');
 vm.$toast.error('error');
 vm.$toast.info('info');
 ```
-
-## Modal 弹框
-
-模拟系统的消息提示框而实现的一套模态对话框组件
-
-### 基础使用
-
-### 不同状态
-
-### usage
