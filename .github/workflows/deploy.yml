@@ -27,3 +27,4 @@ jobs:
           BUILD_SCRIPT: npm install && npm run docs:build
           BUILD_DIR: docs/.vuepress/dist
           CNAME: nsc.best
+          TARGET_BRANCH: gh-pages
