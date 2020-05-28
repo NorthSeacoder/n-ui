@@ -1,0 +1,80 @@
+const { notEmpty, kebabCase, camelCase } = require("../utils.js");
+
+module.exports = {
+  description: "generate a component",
+  prompts: [
+    {
+      type: "input",
+      name: "name",
+      message: "请输入组件名字(请以驼峰命名)",
+      validate: notEmpty("组件名字")
+    },
+    {
+      type: "list",
+      name: "type",
+      message: "请选择组件类型",
+      choices: [
+        {
+          name: "指令",
+          value: "directive"
+        },
+        {
+          name: "组件",
+          value: "component"
+        },
+        {
+          name: "插件",
+          value: "plugin"
+        }
+      ]
+    }
+  ],
+  actions: data => {
+    const kebabName = kebabCase(data.name);
+    const componentName = camelCase(data.name);
+
+    const actions = [
+      {
+        type: "add",
+        path: `src/${data.type}/${kebabName}/src/${kebabName}.vue`,
+        templateFile: "plop-templates/component/index.hbs",
+        data: {
+          componentName,
+          name: kebabName,
+          template: true,
+          script: true,
+          style: true
+        }
+      },
+      {
+        type: "add",
+        path: `src/${data.type}/${kebabName}/index.js`,
+        templateFile: "plop-templates/component/export.hbs",
+        data: {
+          componentName
+        }
+      },
+      {
+        type: "add",
+        path: `docs/comp/${kebabName}.md`,
+        templateFile: "plop-templates/component/md.hbs",
+        data: {
+          name: kebabName
+        }
+      },
+      {
+        type: "add",
+        path: `src/styles/${kebabName}.scss`,
+        templateFile: "plop-templates/component/css.hbs"
+      }
+      // {
+      //   type: "writeJsonAndBuildEntry",
+      //   data: {
+      //     name: data.name
+      //   }
+      // }
+    ];
+
+    return actions;
+  }
+};

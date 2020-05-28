@@ -1,20 +1,40 @@
+const path = require('path');
+
 module.exports = {
     base: '/n-ui/',
     title: 'Nui',
     description: 'Just playing around',
     head: [['link', {rel: 'icon', href: '/n.png'}]],
-    markdown: {
-        lineNumbers: true
+    plugins: [
+      '@vuepress/last-updated',
+      '@vuepress/back-to-top',
+      [
+        'live',
+        {
+          // to use a custom layout for your vue components
+          layout: path.resolve(__dirname, './layout.vue'),
+          editorProps: {
+            lineNumbers: false,
+          }
+        }
+      ],
+    ],
+    configureWebpack: {
+      resolve: {
+        alias: {
+          '@': path.resolve(__dirname, '../../src'),
+        }
+      },
     },
     themeConfig: {
         nav: [
           { text: 'Home', link: '/' },
           { text: '指南', link: '/guide/' },
-          { text: '组件', link: '/components/' },
+          { text: '组件', link: '/comp/' },
         ],
         sidebarDepth:0,
         sidebar: {
-          '/components/':require('./constant/componentsSidebar')
+          '/comp/':require('./constant/componentsSidebar')
         }
       }
 };

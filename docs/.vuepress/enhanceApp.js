@@ -1,5 +1,5 @@
-import NUI from '../../src/index.js'
-import "../../src/styles/index.scss"
+import NUI from '@/index.js'
+import "@/styles/index.scss"
 
 export default ({
   Vue,

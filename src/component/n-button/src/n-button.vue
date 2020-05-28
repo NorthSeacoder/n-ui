@@ -4,7 +4,7 @@
             :autofocus="autofocus"
             :disabled="disabled"
             :name="name"
-            :style="ntnStyle"
+            :style="btnStyle"
             :type="type"
             @click="handleClick">
             <slot></slot>
@@ -25,7 +25,7 @@ export default {
             default: false
         },
 
-        ntnStyle: {
+        btnStyle: {
             type: Object,
             default: () => {}
         },
