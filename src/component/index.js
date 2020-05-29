@@ -1,5 +1,4 @@
 //import
-import AA from './aA';
 import NButton from './n-button';
 import NCalendar from './calendar';
 
