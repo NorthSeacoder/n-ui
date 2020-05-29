@@ -52,6 +52,6 @@ module.exports = {
     const srcActions=getNewSrcActions(data);
     const mdActions=getNewMdActions(data);
 
-    return [...srcActions,mdActions];
+    return [...srcActions,...mdActions];
   }
 };
