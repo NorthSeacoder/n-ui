@@ -12,7 +12,7 @@ module.exports = {
     {
       type: "list",
       name: "type",
-      message: "请选择组件类型",
+      message: "请选择类型",
       choices: [
         {
           name: "指令",
@@ -27,52 +27,77 @@ module.exports = {
           value: "plugin"
         }
       ]
+    },
+    {
+      type: "list",
+      name: "compType",
+      message: "请选择组件类型",
+      choices: [
+        {
+          name: "基础类",
+          value: "basic"
+        },
+        {
+          name: "表单类",
+          value: "form"
+        },
+        {
+          name: "插件类",
+          value: "plugin"
+        }
+      ]
     }
   ],
   actions: data => {
     const kebabName = kebabCase(data.name);
     const componentName = camelCase(data.name);
+    const compTypeReg=new RegExp(`/*${data.compType}*/`);
 
     const actions = [
+      // {
+      //   type: "add",
+      //   path: `src/${data.type}/${kebabName}/src/${kebabName}.vue`,
+      //   templateFile: "plop-templates/component/index.hbs",
+      //   data: {
+      //     componentName,
+      //     name: kebabName,
+      //     template: true,
+      //     script: true,
+      //     style: true
+      //   }
+      // },
+      // {
+      //   type: "add",
+      //   path: `src/${data.type}/${kebabName}/index.js`,
+      //   templateFile: "plop-templates/component/export.hbs",
+      //   data: {
+      //     componentName,
+      //     kebabName
+      //   }
+      // },
+      // {
+      //   type: "add",
+      //   path: `src/styles/${data.type}/${kebabName}.scss`,
+      //   templateFile: "plop-templates/component/css.hbs"
+      // },
+      // {
+      //   type: "add",
+      //   path: `docs/comp/${componentName}.md`,
+      //   templateFile: "plop-templates/component/md.hbs",
+      //   data: {
+      //     name: kebabName
+      //   }
+      // },
       {
-        type: "add",
-        path: `src/${data.type}/${kebabName}/src/${kebabName}.vue`,
-        templateFile: "plop-templates/component/index.hbs",
-        data: {
-          componentName,
-          name: kebabName,
-          template: true,
-          script: true,
-          style: true
-        }
-      },
-      {
-        type: "add",
-        path: `src/${data.type}/${kebabName}/index.js`,
-        templateFile: "plop-templates/component/export.hbs",
-        data: {
-          componentName
-        }
-      },
-      {
-        type: "add",
-        path: `docs/comp/${kebabName}.md`,
-        templateFile: "plop-templates/component/md.hbs",
+        type: "modify",
+        path: `docs/.vuepress/constant/componentsSidebar.js`,
+        pattern: compTypeReg,
+        template:'{{componentName}}',
         data: {
           name: kebabName
         }
-      },
-      {
-        type: "add",
-        path: `src/styles/${kebabName}.scss`,
-        templateFile: "plop-templates/component/css.hbs"
       }
-      // {
-      //   type: "writeJsonAndBuildEntry",
-      //   data: {
-      //     name: data.name
-      //   }
-      // }
+
     ];
 
     return actions;

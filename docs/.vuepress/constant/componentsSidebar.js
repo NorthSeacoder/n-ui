@@ -3,21 +3,31 @@ module.exports = [
       title: 'Plugin',
       collapsable: false,
       children: [
-        'Toast','Modal'
+        'Toast',
+        'Modal'
+        /*plugin*/
       ]
     },
     {
       title: 'Basic',
       collapsable: false,
       children: [
-        'Button','Icon'
+        'Button',
+        'Icon'
+        /*basic*/
       ]
     },
     {
       title: 'Form',
       collapsable: false,
       children: [
-        'Calendar','Cascader-Select','Date','Input','Select','Switch'
+        'Calendar',
+        'Cascader-Select',
+        'Date',
+        'Input',
+        'Select',
+        'Switch'
+        /*form*/
       ]
     },
   ]
