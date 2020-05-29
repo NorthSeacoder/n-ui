@@ -10,7 +10,7 @@ export default {
 
     install(Vue) {
         Object.keys(directive).forEach((key) => {
-            Vue.component(`n-${key}`, directive[key]);
+            Vue.directive(`n-${key}`, directive[key]);
         });
     }
 

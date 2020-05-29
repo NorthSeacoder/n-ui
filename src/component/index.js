@@ -1,11 +1,13 @@
 //import
+import NCalendar from './n-calendar';
+import NCard from './n-card';
 import NButton from './n-button';
-import NCalendar from './calendar';
 
 const components = {
     //component
+	NCalendar,
+	NCard,
     NButton,
-    NCalendar
 };
 
 // const install = function(Vue, options = {}) {

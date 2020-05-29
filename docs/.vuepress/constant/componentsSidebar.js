@@ -4,8 +4,7 @@ module.exports = [
       collapsable: false,
       children: [
         //plugin
-        'Toast',
-        'Modal'
+        'n-toast'
       ]
     },
     {
@@ -13,8 +12,9 @@ module.exports = [
       collapsable: false,
       children: [
         //basic
-        'Button',
-        'Icon'
+				"n-card",
+        'n-button',
+        'n-icon'
       ]
     },
     {
@@ -22,12 +22,7 @@ module.exports = [
       collapsable: false,
       children: [
         //form
-        'Calendar',
-        'Cascader-Select',
-        'Date',
-        'Input',
-        'Select',
-        'Switch'
+				"n-calendar",
       ]
     },
   ]
