@@ -51,7 +51,8 @@ module.exports = {
   actions: data => {
     const kebabName = kebabCase(data.name);
     const componentName = camelCase(data.name);
-    const compTypeReg=new RegExp(`/*${data.compType}*/`);
+    const compTypeReg=new RegExp(`//${data.compType}`);
+    const typeReg=new RegExp(`//${data.type}`);
 
     const actions = [
       // {
@@ -60,7 +61,7 @@ module.exports = {
       //   templateFile: "plop-templates/component/index.hbs",
       //   data: {
       //     componentName,
-      //     name: kebabName,
+      //     kebabName,
       //     template: true,
       //     script: true,
       //     style: true
@@ -85,16 +86,45 @@ module.exports = {
       //   path: `docs/comp/${componentName}.md`,
       //   templateFile: "plop-templates/component/md.hbs",
       //   data: {
-      //     name: kebabName
+      //     kebabName
+      //   }
+      // },
+      // {
+      //   type: "modify",
+      //   path: `docs/.vuepress/constant/componentsSidebar.js`,
+      //   pattern: compTypeReg,
+      //   template:'//{{compType}}\r\n\t\t\t\t"{{componentName}}",',
+      //   data: {
+      //     componentName,
+      //     compType: data.compType
+      //   }
+      // },
+      // {
+      //   type: "modify",
+      //   path: `src/${data.type}/index.js`,
+      //   pattern: typeReg,
+      //   template:'//{{type}}\r\n\t{{componentName}},',
+      //   data: {
+      //     componentName
+      //   }
+      // },
+      // {
+      //   type: "modify",
+      //   path: `src/${data.type}/index.js`,
+      //   pattern: new RegExp(`//import`),
+      //   template:"//import\r\nimport {{componentName}} from './{{kebabName}}';",
+      //   data: {
+      //     componentName
       //   }
       // },
       {
         type: "modify",
-        path: `docs/.vuepress/constant/componentsSidebar.js`,
-        pattern: compTypeReg,
-        template:'{{componentName}}',
+        path: `src/styles/${data.type}/index.scss`,
+        pattern: new RegExp(`//import`),
+        template:"//import\r\n@import './{{kebabName}}.scss';",
         data: {
-          name: kebabName
+          kebabName,
+          componentName
         }
       }
 

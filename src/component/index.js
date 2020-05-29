@@ -1,8 +1,12 @@
+//import
+import AA from './aA';
 import NButton from './n-button';
 import NCalendar from './calendar';
 
 const components = {
-    NButton,NCalendar
+    //component
+    NButton,
+    NCalendar
 };
 
 // const install = function(Vue, options = {}) {
