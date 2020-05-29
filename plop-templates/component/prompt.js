@@ -55,68 +55,68 @@ module.exports = {
     const typeReg=new RegExp(`//${data.type}`);
 
     const actions = [
-      // {
-      //   type: "add",
-      //   path: `src/${data.type}/${kebabName}/src/${kebabName}.vue`,
-      //   templateFile: "plop-templates/component/index.hbs",
-      //   data: {
-      //     componentName,
-      //     kebabName,
-      //     template: true,
-      //     script: true,
-      //     style: true
-      //   }
-      // },
-      // {
-      //   type: "add",
-      //   path: `src/${data.type}/${kebabName}/index.js`,
-      //   templateFile: "plop-templates/component/export.hbs",
-      //   data: {
-      //     componentName,
-      //     kebabName
-      //   }
-      // },
-      // {
-      //   type: "add",
-      //   path: `src/styles/${data.type}/${kebabName}.scss`,
-      //   templateFile: "plop-templates/component/css.hbs"
-      // },
-      // {
-      //   type: "add",
-      //   path: `docs/comp/${componentName}.md`,
-      //   templateFile: "plop-templates/component/md.hbs",
-      //   data: {
-      //     kebabName
-      //   }
-      // },
-      // {
-      //   type: "modify",
-      //   path: `docs/.vuepress/constant/componentsSidebar.js`,
-      //   pattern: compTypeReg,
-      //   template:'//{{compType}}\r\n\t\t\t\t"{{componentName}}",',
-      //   data: {
-      //     componentName,
-      //     compType: data.compType
-      //   }
-      // },
-      // {
-      //   type: "modify",
-      //   path: `src/${data.type}/index.js`,
-      //   pattern: typeReg,
-      //   template:'//{{type}}\r\n\t{{componentName}},',
-      //   data: {
-      //     componentName
-      //   }
-      // },
-      // {
-      //   type: "modify",
-      //   path: `src/${data.type}/index.js`,
-      //   pattern: new RegExp(`//import`),
-      //   template:"//import\r\nimport {{componentName}} from './{{kebabName}}';",
-      //   data: {
-      //     componentName
-      //   }
-      // },
+      {
+        type: "add",
+        path: `src/${data.type}/${kebabName}/src/${kebabName}.vue`,
+        templateFile: "plop-templates/component/index.hbs",
+        data: {
+          componentName,
+          kebabName,
+          template: true,
+          script: true,
+          style: true
+        }
+      },
+      {
+        type: "add",
+        path: `src/${data.type}/${kebabName}/index.js`,
+        templateFile: "plop-templates/component/export.hbs",
+        data: {
+          componentName,
+          kebabName
+        }
+      },
+      {
+        type: "add",
+        path: `src/styles/${data.type}/${kebabName}.scss`,
+        templateFile: "plop-templates/component/css.hbs"
+      },
+      {
+        type: "add",
+        path: `docs/comp/${componentName}.md`,
+        templateFile: "plop-templates/component/md.hbs",
+        data: {
+          kebabName
+        }
+      },
+      {
+        type: "modify",
+        path: `docs/.vuepress/constant/componentsSidebar.js`,
+        pattern: compTypeReg,
+        template:'//{{compType}}\r\n\t\t\t\t"{{componentName}}",',
+        data: {
+          componentName,
+          compType: data.compType
+        }
+      },
+      {
+        type: "modify",
+        path: `src/${data.type}/index.js`,
+        pattern: typeReg,
+        template:'//{{type}}\r\n\t{{componentName}},',
+        data: {
+          componentName
+        }
+      },
+      {
+        type: "modify",
+        path: `src/${data.type}/index.js`,
+        pattern: new RegExp(`//import`),
+        template:"//import\r\nimport {{componentName}} from './{{kebabName}}';",
+        data: {
+          componentName
+        }
+      },
       {
         type: "modify",
         path: `src/styles/${data.type}/index.scss`,
