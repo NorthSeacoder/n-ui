@@ -1,1 +1,4 @@
-test21
+新增组件
+```
+npm run new
+```
