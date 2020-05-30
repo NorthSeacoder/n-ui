@@ -4,6 +4,7 @@ module.exports = [
       collapsable: false,
       children: [
         //basic
+				"n-layout",
 				"n-card",
         'n-button',
         'n-icon'

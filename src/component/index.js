@@ -1,10 +1,12 @@
 //import
+import NLayout from './n-layout';
 import NCalendar from './n-calendar';
 import NCard from './n-card';
 import NButton from './n-button';
 
 const components = {
     //component
+	NLayout,
 	NCalendar,
 	NCard,
     NButton,
