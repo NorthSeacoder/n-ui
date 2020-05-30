@@ -1,7 +1,4 @@
----
-title: n-card
----
-# n-card 卡片
+# Card 卡片
 将信息聚合在卡片容器中展示。
 ## 基本用法
 ```vue live
