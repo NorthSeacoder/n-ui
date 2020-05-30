@@ -1,7 +1,7 @@
 @import "../common/var.scss";
 @import "../mixins/arrow.scss";
 
-@include b(table){
+table{
     width: 100%;
     max-width: 100%;
     font-size: 12px;

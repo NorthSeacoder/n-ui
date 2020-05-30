@@ -13,9 +13,6 @@ module.exports = {
         {
           // to use a custom layout for your vue components
           layout: path.resolve(__dirname, './layout.vue'),
-          editorProps: {
-            lineNumbers: false,
-          }
         }
       ],
     ],

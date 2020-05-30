@@ -181,6 +181,23 @@ export default {
         }
     }
 
+    .online-vue-editor-preview {
+        .n-calendar {
+            table {
+                display: table;
+                th,tr{
+                    border:0
+                }
+                tr{
+                    background-color: #fff;
+                    height: auto;
+                }
+                td{
+                    padding: 0;
+                }
+            }
+        }
+    }
     /**
  * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
  * Based on https://github.com/chriskempson/tomorrow-theme

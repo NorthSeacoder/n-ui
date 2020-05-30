@@ -1,0 +1,25 @@
+@import "../common/var";
+@import "../mixins/arrow.scss";
+
+.n-tooltip {
+    position: absolute;
+    display: none;
+    margin-top: -5px;
+    padding: 4px 6px;
+    background-color: $black;
+    color: $white;
+    border-radius: 3px;
+    font-size: 12px;
+    z-index: $z-index-tooltip;
+    animation: .2s ease-in fade-in;
+
+    &:after {
+        @include genArrow("down", 6px, $black);
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+}

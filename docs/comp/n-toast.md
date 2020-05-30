@@ -2,7 +2,6 @@
 用于主动操作后的反馈
 
 ## 不同状态
-   有三种不同 toast
 ```vue live
 <template>
 	<div>
@@ -35,4 +34,3 @@ export default {
 }
 </script>
 ```
-## usage
