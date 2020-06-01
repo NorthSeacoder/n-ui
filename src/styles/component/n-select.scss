@@ -1,0 +1,202 @@
+@charset "UTF-8";
+@import "../common/var";
+@import "../mixins/mixins";
+
+.n-select {
+    .n-select-input-wrap {
+        margin-top: 5px;
+        min-height: 30px;
+        box-sizing: border-box;
+        border-bottom: 1px solid $gray;
+        padding-top: 5px;
+
+        &.n-select-input-area-focus {
+            border-bottom-color: $primary;
+        }
+
+        .n-select-input-area {
+            display: flex;
+            justify-content: space-between;
+
+            .n-select-shadow-span {
+                font-size: 14px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                visibility: hidden;
+                white-space: pre-wrap;
+                z-index: -1;
+            }
+
+            ul {
+                position: relative;
+                font-size: 14px;
+                line-height: 20px;
+                cursor: pointer;
+                flex: 1;
+                max-width: calc(100% - 20px);
+
+                li {
+                    display: inline-block;
+                    line-height: 20px;
+
+                    input {
+                        all: unset;
+                        display: inline-block;
+                        box-sizing: border-box;
+                        outline: none;
+                        width: 1px;
+                    }
+                }
+
+                .n-select-choice {
+                    border: 1px solid $gray-light;
+                    border-radius: 3px;
+                    background-color: $gray-lighter;
+                    padding: 0 3px;
+                    margin: 0 3px 2px 0;
+                    box-sizing: border-box;
+                    display: inline-flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    max-width: calc(100% - 15px);
+
+                    .n-select-badge {
+                        flex: 1;
+                        display: block;
+                        max-width: 100%;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        margin-right: 3px;
+                    }
+
+                    .n-select-icon-remove-choice {
+                        &:before {
+                            font-size: 10px;
+                            color: $gray;
+                        }
+
+                        &:hover:before {
+                            color: $primary-dark;
+                        }
+                    }
+                }
+
+                .n-select-selected-value {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    max-width: 100%;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow-x: hidden;
+
+                    &.n-select-value-grey {
+                        color: $gray;
+                    }
+                }
+
+                .n-select-placeholder {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    max-width: 100%;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow-x: hidden;
+                    color: $gray;
+                }
+            }
+
+            .n-select-reset {
+                align-self: center;
+                color: $gray;
+
+                .n-select-icon-disabled:before {
+                    color: $gray;
+                }
+            }
+        }
+    }
+
+    &.disabled {
+        .n-select-input-wrap .n-select-input-area ul {
+            cursor: not-allowed;
+
+            .n-select-choice {
+                .n-select-icon-remove-choice {
+                    &:hover:before {
+                        color: $gray;
+                    }
+                }
+            }
+        }
+    }
+}
+.n-select-menu {
+    padding: 10px 0;
+    background-color: $white;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+    box-sizing: border-box;
+    overflow-y: auto;
+
+    li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        height: 30px;
+        min-width: 256px;
+        background-color: $white;
+        padding: 0 10px;
+        cursor: pointer;
+        white-space: pre;
+
+        .n-select-menu-li-limitted {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: block;
+        }
+
+        .n-icon-tick {
+            color: $white;
+        }
+
+        &:hover {
+            background-color: $gray-light;
+        }
+
+        &.n-select-menu-selected {
+            background-color: $gray-light;
+            color: $black;
+
+            span {
+                font-weight: 800;
+            }
+
+            .n-icon-tick:before {
+                color: $primary-dark;
+            }
+        }
+
+        &.n-select-menu-highlight {
+            background-color: $primary-dark;
+            color: $white;
+
+            .n-icon-tick:before {
+                color: $primary-dark;
+            }
+
+            &.n-select-menu-selected .n-icon-tick:before {
+                color: $white;
+            }
+        }
+    }
+
+    .empty-list-item {
+        justify-content: center;
+        color: #666;
+    }
+}

@@ -15,6 +15,7 @@ module.exports = [
       collapsable: false,
       children: [
         //form
+				"n-select",
 				"n-calendar",
       ]
     },

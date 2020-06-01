@@ -1,4 +1,5 @@
 //import
+import NSelect from './n-select';
 import NLayout from './n-layout';
 import NCalendar from './n-calendar';
 import NCard from './n-card';
@@ -6,6 +7,7 @@ import NButton from './n-button';
 
 const components = {
     //component
+	NSelect,
 	NLayout,
 	NCalendar,
 	NCard,
