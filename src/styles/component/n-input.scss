@@ -1,0 +1,120 @@
+@charset "UTF-8";
+@import "../common/var";
+@import "../mixins/mixins";
+
+.n-input {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .content {
+        flex: 1;
+
+        input {
+            &[type="checkbox"] {
+                width: 256px;
+                height: 30px;
+                cursor: pointer;
+            }
+
+            &.toggleable-input {
+                padding-right: 30px;
+            }
+        }
+
+        .icon-btn {
+            margin-left: -20px;
+            margin-bottom: -6px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.form-block,
+.form-block-horizontal {
+    .n-input {
+        display: flex;
+    }
+}
+
+.n-date,
+.n-date-time,
+.n-date-string,
+.n-image,
+.n-select {
+    .n-input {
+        position: relative;
+
+        &.n-date-input-active {
+            input {
+                border-color: $primary;
+            }
+        }
+
+        input {
+            padding-right: 15px;
+            cursor: pointer;
+        }
+
+        .n-right-icon {
+            position: absolute;
+            right: 0;
+            bottom: 8px;
+            color: $gray;
+            z-index: $z-index-right-reset;
+
+            &.n-date-icon-active,
+            &.n-select-icon-active {
+                color: $primary;
+            }
+        }
+    }
+
+    &:hover {
+        &.n-resettable {
+            .n-input i,
+            .n-select-reset i {
+                cursor: pointer;
+
+                &:hover {
+                    color: $primary-dark;
+                }
+
+                &:before {
+                    content: "\e60c";
+                }
+            }
+        }
+    }
+
+    &.disabled {
+        .n-input {
+            input {
+                color: $gray;
+                cursor: not-allowed;
+                user-select: none;
+            }
+        }
+    }
+}
+.n-textarea {
+    position: relative;
+
+    textarea {
+        line-height: 22.5px;
+        overflow: auto;
+        background-color: transparent;
+    }
+
+    .n-input-shadow-textarea {
+        overflow: hidden;
+        position: absolute;
+        height: initial;
+        visibility: hidden;
+        top: 0;
+        left: 0;
+    }
+}
