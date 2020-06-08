@@ -109,8 +109,6 @@ function getNewMdActions(data) {
 function getNewTestActions(data) {
     const kebabName = kebabCase(data.name);
     const componentName = camelCase(data.name);
-
-    const compTypeReg = new RegExp(`//${data.compType}`);
     return [
         {
             type: 'add',
