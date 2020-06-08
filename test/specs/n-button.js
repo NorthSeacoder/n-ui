@@ -1,62 +1,62 @@
 import { createTest, createVue, destroyVM } from '../util';
-import Button from 'component/n-button';
+import NButton from 'component/n-button';
 
-describe('Button', () => {
+describe('n-button', () => {
     let vm;
     afterEach(() => {
       destroyVM(vm);
     });
   
     it('create', () => {
-      vm = createTest(Button, {}, true);
+      vm = createTest(NButton, {}, true);
       let buttonElm = vm.$el;
       expect(buttonElm.classList.contains('n-button')).to.be.true;
     });
 
     it('autofocus', () => {
-      vm = createTest(Button, {autofocus:true}, true);
+      vm = createTest(NButton, {autofocus:true}, true);
       let buttonElm = vm.$el.querySelector('button');;
       expect(buttonElm.getAttribute('autofocus')).to.be.equal('autofocus');
     });
 
     it('btnStyle', () => {
-      vm = createTest(Button, {btnStyle:{color:'red'}}, true);
+      vm = createTest(NButton, {btnStyle:{color:'red'}}, true);
       let buttonElm = vm.$el.querySelector('button');;
       expect(buttonElm.getAttribute('style')).to.be.equal('color: red;');
     });
 
     it('disabled', () => {
-      vm = createTest(Button, {disabled:true}, true);
+      vm = createTest(NButton, {disabled:true}, true);
       let buttonElm = vm.$el.querySelector('button');;
       expect(buttonElm.getAttribute('disabled')).to.be.equal('disabled');
     });
     
     it('theme', () => {
-      vm = createTest(Button, {theme:'primary'}, true);
+      vm = createTest(NButton, {theme:'primary'}, true);
       let buttonElm = vm.$el;
       expect(buttonElm.classList.contains('theme-primary')).to.be.true;
     });
     
     it('name', () => {
-      vm = createTest(Button, {name:'n-button-name'}, true);
+      vm = createTest(NButton, {name:'n-button-name'}, true);
       let buttonElm = vm.$el.querySelector('button');;
       expect(buttonElm.getAttribute('name')).to.be.equal('n-button-name');
     });
 
     it('shape', () => {
-      vm = createTest(Button, {shape:'round'}, true);
+      vm = createTest(NButton, {shape:'round'}, true);
       let buttonElm = vm.$el;
       expect(buttonElm.classList.contains('shape-round')).to.be.true;
     });
 
     it('size', () => {
-      vm = createTest(Button, {size:'lg'}, true);
+      vm = createTest(NButton, {size:'lg'}, true);
       let buttonElm = vm.$el;
       expect(buttonElm.classList.contains('size-lg')).to.be.true;
     });
 
     it('type', () => {
-      vm = createTest(Button, {type:'reset'}, true);
+      vm = createTest(NButton, {type:'reset'}, true);
       let buttonElm = vm.$el.querySelector('button');
       expect(buttonElm.getAttribute('type')).to.be.equal('reset');
     });

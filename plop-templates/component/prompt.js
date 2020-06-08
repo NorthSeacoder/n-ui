@@ -1,4 +1,4 @@
-const { notEmpty, kebabCase, camelCase ,getNewMdActions,getNewSrcActions} = require("../utils.js");
+const { notEmpty ,getNewMdActions,getNewSrcActions,getNewTestActions} = require("../utils.js");
 
 module.exports = {
   description: "generate a component",
@@ -51,7 +51,8 @@ module.exports = {
   actions: data => {
     const srcActions=getNewSrcActions(data);
     const mdActions=getNewMdActions(data);
+    const testActions=getNewTestActions(data);
 
-    return [...srcActions,...mdActions];
+    return [...srcActions,...mdActions,...testActions];
   }
 };

@@ -4,7 +4,7 @@
   "description": "",
   "main": "lib/n-ui.min.js",
   "scripts": {
-    "test": "karma start test/karma.conf.js",
+    "test": "cross-env BABEL_ENV=test karma start test/karma.conf.js",
     "build:style": "gulp --gulpfile build/gen-style.js",
     "build:prod": "webpack --config build/webpack.prod.js",
     "docs:dev": "vuepress dev docs",
@@ -12,7 +12,8 @@
     "deploy": "gh-pages -d docs/.vuepress/dist -b docs",
     "deploy:build": "npm run docs:build && npm run deploy",
     "build:components": "webpack --config build/webpack.component.js",
-    "dist": "npm run build:style && npm run build:prod && npm run build:components",
+    "clean":"rimraf lib &&rimraf test/coverage",
+    "dist": "npm run clean && npm run build:style && npm run build:prod && npm run build:components",
     "pub": "npm publish --access=public",
     "prepublish": "npm run dist",
     "new": "plop"
@@ -32,6 +33,7 @@
     "@babel/preset-env": "^7.5.5",
     "@vue/test-utils": "^1.0.0-beta.29",
     "babel-loader": "^8.0.6",
+    "babel-plugin-istanbul": "^6.0.0",
     "babel-plugin-syntax-jsx": "6.18.0",
     "babel-plugin-transform-vue-jsx": "3.7.0",
     "babel-regenerator-runtime": "^6.5.0",

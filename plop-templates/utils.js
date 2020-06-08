@@ -106,8 +106,26 @@ function getNewMdActions(data) {
         },
     ];
 }
+function getNewTestActions(data) {
+    const kebabName = kebabCase(data.name);
+    const componentName = camelCase(data.name);
+
+    const compTypeReg = new RegExp(`//${data.compType}`);
+    return [
+        {
+            type: 'add',
+            path: `test/specs/${kebabName}.js`,
+            templateFile: 'plop-templates/component/test.hbs',
+            data: {
+                kebabName,
+                componentName
+            },
+        }
+    ];
+}
 
 exports.getNewMdActions = getNewMdActions;
 exports.getNewSrcActions = getNewSrcActions;
+exports.getNewTestActions = getNewTestActions;
 exports.camelCase = camelCase;
 exports.kebabCase = kebabCase;
