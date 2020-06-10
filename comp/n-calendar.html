@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Calendar 日历 | Nui</title>
+    <meta name="description" content="Just playing around">
+    <link rel="icon" href="/n-ui/n.png">
+    
+    <link rel="preload" href="/n-ui/assets/css/0.styles.36f69dd7.css" as="style"><link rel="preload" href="/n-ui/assets/js/app.49250d1e.js" as="script"><link rel="preload" href="/n-ui/assets/js/3.61f0e775.js" as="script"><link rel="preload" href="/n-ui/assets/js/11.7cc6d986.js" as="script"><link rel="preload" href="/n-ui/assets/js/4.db85590f.js" as="script"><link rel="prefetch" href="/n-ui/assets/js/10.2468cf35.js"><link rel="prefetch" href="/n-ui/assets/js/12.99389936.js"><link rel="prefetch" href="/n-ui/assets/js/13.28e6ca1d.js"><link rel="prefetch" href="/n-ui/assets/js/14.afb7307d.js"><link rel="prefetch" href="/n-ui/assets/js/15.a9eeeb24.js"><link rel="prefetch" href="/n-ui/assets/js/16.e5a719f8.js"><link rel="prefetch" href="/n-ui/assets/js/17.138dfae7.js"><link rel="prefetch" href="/n-ui/assets/js/18.c3928360.js"><link rel="prefetch" href="/n-ui/assets/js/19.be5425ea.js"><link rel="prefetch" href="/n-ui/assets/js/2.90d9b3ad.js"><link rel="prefetch" href="/n-ui/assets/js/5.a93e6b93.js"><link rel="prefetch" href="/n-ui/assets/js/6.9258ef33.js"><link rel="prefetch" href="/n-ui/assets/js/7.8cd05be6.js"><link rel="prefetch" href="/n-ui/assets/js/8.51b0d15d.js"><link rel="prefetch" href="/n-ui/assets/js/9.7dd7d968.js">
+    <link rel="stylesheet" href="/n-ui/assets/css/0.styles.36f69dd7.css"><style data-vue-ssr-id="data-v-3fd1eeb2_0">
+.src-error-3F1Q {
+  color: red;
+  text-align: left;
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+</style>
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/n-ui/" class="home-link router-link-active"><!----> <span class="site-name">Nui</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/n-ui/" class="nav-link">Home</a></div><div class="nav-item"><a href="/n-ui/guide/" class="nav-link">指南</a></div><div class="nav-item"><a href="/n-ui/comp/" class="nav-link router-link-active">组件</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/n-ui/" class="nav-link">Home</a></div><div class="nav-item"><a href="/n-ui/guide/" class="nav-link">指南</a></div><div class="nav-item"><a href="/n-ui/comp/" class="nav-link router-link-active">组件</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Basic 基础组件</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/n-ui/comp/n-layout.html" class="sidebar-link">Layout 框架(待优化)</a></li><li><a href="/n-ui/comp/n-card.html" class="sidebar-link">Card 卡片</a></li><li><a href="/n-ui/comp/n-button.html" class="sidebar-link">Button 按钮</a></li><li><a href="/n-ui/comp/n-icon.html" class="sidebar-link">Icon 图标</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Form 表单类</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/n-ui/comp/n-input.html" class="sidebar-link">n-input</a></li><li><a href="/n-ui/comp/n-select.html" class="sidebar-link">Select 搜索(待优化)</a></li><li><a href="/n-ui/comp/n-calendar.html" class="active sidebar-link">Calendar 日历</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Plugin 插件类</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/n-ui/comp/n-toast.html" class="sidebar-link">Taost 弹框</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="calendar-日历"><a href="#calendar-日历" class="header-anchor">#</a> Calendar 日历</h1> <h2 id="基本使用"><a href="#基本使用" class="header-anchor">#</a> 基本使用</h2> <div code="&lt;template&gt;
+    &lt;n-calendar @on-select=&quot;select&quot;&gt;&lt;/n-calendar&gt;
+&lt;/template&gt;
+&lt;script&gt;
+    export default {
+        data() {
+            return {
+               
+            }
+        },
+        methods:{
+            select(data){
+                this.$toast.info(`选择日期${data}`)
+            }
+        }
+    };
+&lt;/script&gt;
+
+" language="vue" prismLang="html" requires="[object Object]" lang="vue" class="online-vue-editor"><div class="online-vue-editor-preview"><div id="v-e6e3d5e4" class="n-calendar"><div class="n-calendar-header"><div>2020年06月</div> <div>calendar</div> <div class="n-calendar-button-group"><div class="n-button theme-normal shape-normal size-md"><button type="submit">上个月</button></div> <div class="n-button theme-normal shape-normal size-md"><button type="submit">今天</button></div> <div class="n-button theme-normal shape-normal size-md"><button type="submit">下个月</button></div></div></div> <div class="n-calendar-body"><table class="n-calendar-table n--table"><thead><th>日</th><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th></thead> <tbody><tr><td><div class="dateCell"><div>31</div></div></td><td><div class="dateCell view-month"><div>1</div></div></td><td><div class="dateCell view-month"><div>2</div></div></td><td><div class="dateCell view-month"><div>3</div></div></td><td><div class="dateCell view-month"><div>4</div></div></td><td><div class="dateCell view-month"><div>5</div></div></td><td><div class="dateCell view-month"><div>6</div></div></td></tr><tr><td><div class="dateCell view-month"><div>7</div></div></td><td><div class="dateCell view-month"><div>8</div></div></td><td><div class="dateCell view-month"><div>9</div></div></td><td><div class="dateCell view-month current-date selected-date"><div>10</div></div></td><td><div class="dateCell view-month"><div>11</div></div></td><td><div class="dateCell view-month"><div>12</div></div></td><td><div class="dateCell view-month"><div>13</div></div></td></tr><tr><td><div class="dateCell view-month"><div>14</div></div></td><td><div class="dateCell view-month"><div>15</div></div></td><td><div class="dateCell view-month"><div>16</div></div></td><td><div class="dateCell view-month"><div>17</div></div></td><td><div class="dateCell view-month"><div>18</div></div></td><td><div class="dateCell view-month"><div>19</div></div></td><td><div class="dateCell view-month"><div>20</div></div></td></tr><tr><td><div class="dateCell view-month"><div>21</div></div></td><td><div class="dateCell view-month"><div>22</div></div></td><td><div class="dateCell view-month"><div>23</div></div></td><td><div class="dateCell view-month"><div>24</div></div></td><td><div class="dateCell view-month"><div>25</div></div></td><td><div class="dateCell view-month"><div>26</div></div></td><td><div class="dateCell view-month"><div>27</div></div></td></tr><tr><td><div class="dateCell view-month"><div>28</div></div></td><td><div class="dateCell view-month"><div>29</div></div></td><td><div class="dateCell view-month"><div>30</div></div></td><td><div class="dateCell"><div>1</div></div></td><td><div class="dateCell"><div>2</div></div></td><td><div class="dateCell"><div>3</div></div></td><td><div class="dateCell"><div>4</div></div></td></tr><tr><td><div class="dateCell"><div>5</div></div></td><td><div class="dateCell"><div>6</div></div></td><td><div class="dateCell"><div>7</div></div></td><td><div class="dateCell"><div>8</div></div></td><td><div class="dateCell"><div>9</div></div></td><td><div class="dateCell"><div>10</div></div></td><td><div class="dateCell"><div>11</div></div></td></tr></tbody></table></div></div></div> <div class="online-vue-editor-main"><div class="online-vue-editor-main-code" style="display:none;"><span class="copy">COPY</span> <div class="prism-editor-wrapper"><div aria-hidden="true" class="prism-editor__line-numbers" style="min-height:20px;"><div class="prism-editor__line-width-calc" style="height:0px;visibility:hidden;pointer-events:none;">
+      999
+    </div><div class="prism-editor__line-number token comment">
+      1
+    </div><div class="prism-editor__line-number token comment">
+      2
+    </div><div class="prism-editor__line-number token comment">
+      3
+    </div><div class="prism-editor__line-number token comment">
+      4
+    </div><div class="prism-editor__line-number token comment">
+      5
+    </div><div class="prism-editor__line-number token comment">
+      6
+    </div><div class="prism-editor__line-number token comment">
+      7
+    </div><div class="prism-editor__line-number token comment">
+      8
+    </div><div class="prism-editor__line-number token comment">
+      9
+    </div><div class="prism-editor__line-number token comment">
+      10
+    </div><div class="prism-editor__line-number token comment">
+      11
+    </div><div class="prism-editor__line-number token comment">
+      12
+    </div><div class="prism-editor__line-number token comment">
+      13
+    </div><div class="prism-editor__line-number token comment">
+      14
+    </div><div class="prism-editor__line-number token comment">
+      15
+    </div><div class="prism-editor__line-number token comment">
+      16
+    </div><div class="prism-editor__line-number token comment">
+      17
+    </div><div class="prism-editor__line-number token comment">
+      18
+    </div></div><pre contenteditable="true" spellCheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" data-gramm="false" class="prism-editor__code language-html"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-calendar</span> <span class="token attr-name">@on-select</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>select<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-calendar</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+        <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token punctuation">{</span>
+               
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        methods<span class="token punctuation">:</span><span class="token punctuation">{</span>
+            <span class="token function">select</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>$toast<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">选择日期</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>data<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+</code></pre></div></div> <div class="online-vue-editor-main-button"><span class="tringle"></span> <span style="display:none;">显示代码</span></div></div></div><h2 id="卡片模式"><a href="#卡片模式" class="header-anchor">#</a> 卡片模式</h2> <div code="&lt;template&gt;
+&lt;div style=&quot;width:300px;&quot;&gt;
+    &lt;n-calendar card&gt;&lt;/n-calendar&gt;
+&lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+    export default {
+        data() {
+            return {
+               
+            }
+        },
+    };
+&lt;/script&gt;
+
+" language="vue" prismLang="html" requires="[object Object]" lang="vue" class="online-vue-editor"><div class="online-vue-editor-preview"><div id="v-b817226a" style="width:300px;"><div class="n-calendar"><div class="n-calendar-header calendar-card"><!----> <div class="n-calendar-button-group"><div class="n-button theme-normal shape-normal size-sm"><button type="submit">上个月</button></div> <div class="n-button theme-normal shape-normal size-sm"><button type="submit">今天</button></div> <div class="n-button theme-normal shape-normal size-sm"><button type="submit">下个月</button></div></div></div> <div class="n-calendar-body calendar-card"><table class="n-calendar-table n--table"><thead><th>日</th><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th></thead> <tbody><tr><td><div class="dateCell"><div>31</div></div></td><td><div class="dateCell view-month"><div>1</div></div></td><td><div class="dateCell view-month"><div>2</div></div></td><td><div class="dateCell view-month"><div>3</div></div></td><td><div class="dateCell view-month"><div>4</div></div></td><td><div class="dateCell view-month"><div>5</div></div></td><td><div class="dateCell view-month"><div>6</div></div></td></tr><tr><td><div class="dateCell view-month"><div>7</div></div></td><td><div class="dateCell view-month"><div>8</div></div></td><td><div class="dateCell view-month"><div>9</div></div></td><td><div class="dateCell view-month current-date selected-date"><div>10</div></div></td><td><div class="dateCell view-month"><div>11</div></div></td><td><div class="dateCell view-month"><div>12</div></div></td><td><div class="dateCell view-month"><div>13</div></div></td></tr><tr><td><div class="dateCell view-month"><div>14</div></div></td><td><div class="dateCell view-month"><div>15</div></div></td><td><div class="dateCell view-month"><div>16</div></div></td><td><div class="dateCell view-month"><div>17</div></div></td><td><div class="dateCell view-month"><div>18</div></div></td><td><div class="dateCell view-month"><div>19</div></div></td><td><div class="dateCell view-month"><div>20</div></div></td></tr><tr><td><div class="dateCell view-month"><div>21</div></div></td><td><div class="dateCell view-month"><div>22</div></div></td><td><div class="dateCell view-month"><div>23</div></div></td><td><div class="dateCell view-month"><div>24</div></div></td><td><div class="dateCell view-month"><div>25</div></div></td><td><div class="dateCell view-month"><div>26</div></div></td><td><div class="dateCell view-month"><div>27</div></div></td></tr><tr><td><div class="dateCell view-month"><div>28</div></div></td><td><div class="dateCell view-month"><div>29</div></div></td><td><div class="dateCell view-month"><div>30</div></div></td><td><div class="dateCell"><div>1</div></div></td><td><div class="dateCell"><div>2</div></div></td><td><div class="dateCell"><div>3</div></div></td><td><div class="dateCell"><div>4</div></div></td></tr><tr><td><div class="dateCell"><div>5</div></div></td><td><div class="dateCell"><div>6</div></div></td><td><div class="dateCell"><div>7</div></div></td><td><div class="dateCell"><div>8</div></div></td><td><div class="dateCell"><div>9</div></div></td><td><div class="dateCell"><div>10</div></div></td><td><div class="dateCell"><div>11</div></div></td></tr></tbody></table></div></div></div></div> <div class="online-vue-editor-main"><div class="online-vue-editor-main-code" style="display:none;"><span class="copy">COPY</span> <div class="prism-editor-wrapper"><div aria-hidden="true" class="prism-editor__line-numbers" style="min-height:20px;"><div class="prism-editor__line-width-calc" style="height:0px;visibility:hidden;pointer-events:none;">
+      999
+    </div><div class="prism-editor__line-number token comment">
+      1
+    </div><div class="prism-editor__line-number token comment">
+      2
+    </div><div class="prism-editor__line-number token comment">
+      3
+    </div><div class="prism-editor__line-number token comment">
+      4
+    </div><div class="prism-editor__line-number token comment">
+      5
+    </div><div class="prism-editor__line-number token comment">
+      6
+    </div><div class="prism-editor__line-number token comment">
+      7
+    </div><div class="prism-editor__line-number token comment">
+      8
+    </div><div class="prism-editor__line-number token comment">
+      9
+    </div><div class="prism-editor__line-number token comment">
+      10
+    </div><div class="prism-editor__line-number token comment">
+      11
+    </div><div class="prism-editor__line-number token comment">
+      12
+    </div><div class="prism-editor__line-number token comment">
+      13
+    </div><div class="prism-editor__line-number token comment">
+      14
+    </div><div class="prism-editor__line-number token comment">
+      15
+    </div></div><pre contenteditable="true" spellCheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" data-gramm="false" class="prism-editor__code language-html"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">width</span><span class="token punctuation">:</span>300px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-calendar</span> <span class="token attr-name">card</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-calendar</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+        <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token punctuation">{</span>
+               
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+</code></pre></div></div> <div class="online-vue-editor-main-button"><span class="tringle"></span> <span style="display:none;">显示代码</span></div></div></div><h3 id="props"><a href="#props" class="header-anchor">#</a> Props</h3> <table><thead><tr><th style="text-align:center;">Name</th> <th style="text-align:center;">Type</th> <th style="text-align:center;">Desc</th> <th style="text-align:center;">Default</th></tr></thead> <tbody><tr><td style="text-align:center;">value/v-model</td> <td style="text-align:center;">Date/string/number</td> <td style="text-align:center;">所选日期</td> <td style="text-align:center;">now</td></tr> <tr><td style="text-align:center;">card</td> <td style="text-align:center;">Boolean</td> <td style="text-align:center;">卡片模式</td> <td style="text-align:center;">false</td></tr></tbody></table> <h3 id="events"><a href="#events" class="header-anchor">#</a> Events</h3> <table><thead><tr><th style="text-align:center;">Name</th> <th style="text-align:center;">Type</th> <th style="text-align:center;">Desc</th></tr></thead> <tbody><tr><td style="text-align:center;">on-select</td> <td style="text-align:center;">(date) =&gt; void</td> <td style="text-align:center;">点击选择日期回调</td></tr></tbody></table> <h3 id="slots"><a href="#slots" class="header-anchor">#</a> slots</h3> <h4 id="datecell"><a href="#datecell" class="header-anchor">#</a> dateCell</h4> <table><thead><tr><th style="text-align:center;">Name</th> <th style="text-align:center;">Type</th> <th style="text-align:center;">Desc</th></tr></thead> <tbody><tr><td style="text-align:center;">data</td> <td style="text-align:center;">Object</td> <td style="text-align:center;">当前日期参数</td></tr></tbody></table> <h5 id="data"><a href="#data" class="header-anchor">#</a> data</h5> <table><thead><tr><th style="text-align:center;">Name</th> <th style="text-align:center;">Type</th> <th style="text-align:center;">Desc</th></tr></thead> <tbody><tr><td style="text-align:center;">currentDateFlag</td> <td style="text-align:center;">Boolean</td> <td style="text-align:center;">是否当前日期</td></tr> <tr><td style="text-align:center;">date</td> <td style="text-align:center;">Number</td> <td style="text-align:center;">日期</td></tr> <tr><td style="text-align:center;">day</td> <td style="text-align:center;">Number</td> <td style="text-align:center;">周</td></tr> <tr><td style="text-align:center;">i</td> <td style="text-align:center;">Number</td> <td style="text-align:center;">日历表格中位置</td></tr> <tr><td style="text-align:center;">month</td> <td style="text-align:center;">Number</td> <td style="text-align:center;">月</td></tr> <tr><td style="text-align:center;">timestamp</td> <td style="text-align:center;">Number</td> <td style="text-align:center;">时间戳</td></tr> <tr><td style="text-align:center;">viewMonthFlag</td> <td style="text-align:center;">Boolean</td> <td style="text-align:center;">是否当前月</td></tr> <tr><td style="text-align:center;">selectedDateFlag</td> <td style="text-align:center;">Boolean</td> <td style="text-align:center;">是否当前选择日期</td></tr></tbody></table> <h4 id="header"><a href="#header" class="header-anchor">#</a> header</h4> <table><thead><tr><th style="text-align:center;">Name</th> <th style="text-align:center;">props</th> <th style="text-align:center;">Desc</th> <th style="text-align:center;">Default</th></tr></thead> <tbody><tr><td style="text-align:center;">header-left</td> <td style="text-align:center;">{data}</td> <td style="text-align:center;">data为所选日期所在年月</td> <td style="text-align:center;">当前月份</td></tr> <tr><td style="text-align:center;">header-center</td> <td style="text-align:center;">{data}</td> <td style="text-align:center;">data日历标题</td> <td style="text-align:center;">calendar</td></tr> <tr><td style="text-align:center;">header-right</td> <td style="text-align:center;">null</td> <td style="text-align:center;">右侧按钮区</td> <td style="text-align:center;">上个月&amp;今天&amp;下个月 切换按钮</td></tr></tbody></table></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">6/10/2020, 3:21:36 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/n-ui/comp/n-select.html" class="prev">Select 搜索(待优化)</a></span> <span class="next"><a href="/n-ui/comp/n-toast.html">Taost 弹框</a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/n-ui/assets/js/app.49250d1e.js" defer></script><script src="/n-ui/assets/js/3.61f0e775.js" defer></script><script src="/n-ui/assets/js/11.7cc6d986.js" defer></script><script src="/n-ui/assets/js/4.db85590f.js" defer></script>
+  </body>
+</html>

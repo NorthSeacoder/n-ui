@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Button 按钮 | Nui</title>
+    <meta name="description" content="Just playing around">
+    <link rel="icon" href="/n-ui/n.png">
+    
+    <link rel="preload" href="/n-ui/assets/css/0.styles.36f69dd7.css" as="style"><link rel="preload" href="/n-ui/assets/js/app.49250d1e.js" as="script"><link rel="preload" href="/n-ui/assets/js/3.61f0e775.js" as="script"><link rel="preload" href="/n-ui/assets/js/10.2468cf35.js" as="script"><link rel="preload" href="/n-ui/assets/js/4.db85590f.js" as="script"><link rel="prefetch" href="/n-ui/assets/js/11.7cc6d986.js"><link rel="prefetch" href="/n-ui/assets/js/12.99389936.js"><link rel="prefetch" href="/n-ui/assets/js/13.28e6ca1d.js"><link rel="prefetch" href="/n-ui/assets/js/14.afb7307d.js"><link rel="prefetch" href="/n-ui/assets/js/15.a9eeeb24.js"><link rel="prefetch" href="/n-ui/assets/js/16.e5a719f8.js"><link rel="prefetch" href="/n-ui/assets/js/17.138dfae7.js"><link rel="prefetch" href="/n-ui/assets/js/18.c3928360.js"><link rel="prefetch" href="/n-ui/assets/js/19.be5425ea.js"><link rel="prefetch" href="/n-ui/assets/js/2.90d9b3ad.js"><link rel="prefetch" href="/n-ui/assets/js/5.a93e6b93.js"><link rel="prefetch" href="/n-ui/assets/js/6.9258ef33.js"><link rel="prefetch" href="/n-ui/assets/js/7.8cd05be6.js"><link rel="prefetch" href="/n-ui/assets/js/8.51b0d15d.js"><link rel="prefetch" href="/n-ui/assets/js/9.7dd7d968.js">
+    <link rel="stylesheet" href="/n-ui/assets/css/0.styles.36f69dd7.css"><style data-vue-ssr-id="data-v-3fd1eeb2_0">
+.src-error-3F1Q {
+  color: red;
+  text-align: left;
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+</style>
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/n-ui/" class="home-link router-link-active"><!----> <span class="site-name">Nui</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/n-ui/" class="nav-link">Home</a></div><div class="nav-item"><a href="/n-ui/guide/" class="nav-link">指南</a></div><div class="nav-item"><a href="/n-ui/comp/" class="nav-link router-link-active">组件</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/n-ui/" class="nav-link">Home</a></div><div class="nav-item"><a href="/n-ui/guide/" class="nav-link">指南</a></div><div class="nav-item"><a href="/n-ui/comp/" class="nav-link router-link-active">组件</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Basic 基础组件</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/n-ui/comp/n-layout.html" class="sidebar-link">Layout 框架(待优化)</a></li><li><a href="/n-ui/comp/n-card.html" class="sidebar-link">Card 卡片</a></li><li><a href="/n-ui/comp/n-button.html" class="active sidebar-link">Button 按钮</a></li><li><a href="/n-ui/comp/n-icon.html" class="sidebar-link">Icon 图标</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Form 表单类</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/n-ui/comp/n-input.html" class="sidebar-link">n-input</a></li><li><a href="/n-ui/comp/n-select.html" class="sidebar-link">Select 搜索(待优化)</a></li><li><a href="/n-ui/comp/n-calendar.html" class="sidebar-link">Calendar 日历</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Plugin 插件类</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/n-ui/comp/n-toast.html" class="sidebar-link">Taost 弹框</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="button-按钮"><a href="#button-按钮" class="header-anchor">#</a> Button 按钮</h1> <p>用于主动操作后的反馈</p> <h2 id="基础使用"><a href="#基础使用" class="header-anchor">#</a> 基础使用</h2> <div code="&lt;template&gt;
+	&lt;div&gt;
+		&lt;n-button  @click=&quot;handleClick&quot;&gt;click me&lt;/n-button&gt;
+		&lt;n-button disabled @click=&quot;handleClick&quot;&gt;Disabled&lt;/n-button&gt;
+	&lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+	 data() {
+        return {
+        }
+    },
+	methods:{
+		handleClick(event) {
+			const vm = this;
+			this.$toast.info('click me!');
+        }
+	}
+}
+&lt;/script&gt;
+" language="vue" prismLang="html" requires="[object Object]" lang="vue" class="online-vue-editor"><div class="online-vue-editor-preview"><div id="v-a340859a"><div class="n-button theme-normal shape-normal size-md"><button type="submit">click me</button></div> <div class="n-button theme-normal shape-normal size-md"><button disabled="disabled" type="submit">Disabled</button></div></div></div> <div class="online-vue-editor-main"><div class="online-vue-editor-main-code" style="display:none;"><span class="copy">COPY</span> <div class="prism-editor-wrapper"><div aria-hidden="true" class="prism-editor__line-numbers" style="min-height:20px;"><div class="prism-editor__line-width-calc" style="height:0px;visibility:hidden;pointer-events:none;">
+      999
+    </div><div class="prism-editor__line-number token comment">
+      1
+    </div><div class="prism-editor__line-number token comment">
+      2
+    </div><div class="prism-editor__line-number token comment">
+      3
+    </div><div class="prism-editor__line-number token comment">
+      4
+    </div><div class="prism-editor__line-number token comment">
+      5
+    </div><div class="prism-editor__line-number token comment">
+      6
+    </div><div class="prism-editor__line-number token comment">
+      7
+    </div><div class="prism-editor__line-number token comment">
+      8
+    </div><div class="prism-editor__line-number token comment">
+      9
+    </div><div class="prism-editor__line-number token comment">
+      10
+    </div><div class="prism-editor__line-number token comment">
+      11
+    </div><div class="prism-editor__line-number token comment">
+      12
+    </div><div class="prism-editor__line-number token comment">
+      13
+    </div><div class="prism-editor__line-number token comment">
+      14
+    </div><div class="prism-editor__line-number token comment">
+      15
+    </div><div class="prism-editor__line-number token comment">
+      16
+    </div><div class="prism-editor__line-number token comment">
+      17
+    </div><div class="prism-editor__line-number token comment">
+      18
+    </div><div class="prism-editor__line-number token comment">
+      19
+    </div><div class="prism-editor__line-number token comment">
+      20
+    </div><div class="prism-editor__line-number token comment">
+      21
+    </div></div><pre contenteditable="true" spellCheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" data-gramm="false" class="prism-editor__code language-html"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span>  <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>click me<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">disabled</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Disabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+	 <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+	methods<span class="token punctuation">:</span><span class="token punctuation">{</span>
+		<span class="token function">handleClick</span><span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">const</span> vm <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+			<span class="token keyword">this</span><span class="token punctuation">.</span>$toast<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">'click me!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+</code></pre></div></div> <div class="online-vue-editor-main-button"><span class="tringle"></span> <span style="display:none;">显示代码</span></div></div></div><h2 id="不同状态"><a href="#不同状态" class="header-anchor">#</a> 不同状态</h2> <div code="&lt;template&gt;
+	&lt;div&gt;
+		&lt;n-button  @click=&quot;handleClick&quot;&gt;Click me&lt;/n-button&gt;
+		&lt;n-button theme=&quot;primary&quot;&gt;Click me&lt;/n-button&gt;
+		&lt;n-button theme=&quot;danger&quot;&gt;Click me&lt;/n-button&gt;
+	&lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+	data() {
+        return {
+        }
+    },
+	
+	methods:{
+		handleClick(event) {
+			const vm = this;
+			vm.$toast.info('theme')
+        }
+	}
+}
+&lt;/script&gt;
+" language="vue" prismLang="html" requires="[object Object]" lang="vue" class="online-vue-editor"><div class="online-vue-editor-preview"><div id="v-0b15574c"><div class="n-button theme-normal shape-normal size-md"><button type="submit">Click me</button></div> <div class="n-button theme-primary shape-normal size-md"><button type="submit">Click me</button></div> <div class="n-button theme-danger shape-normal size-md"><button type="submit">Click me</button></div></div></div> <div class="online-vue-editor-main"><div class="online-vue-editor-main-code" style="display:none;"><span class="copy">COPY</span> <div class="prism-editor-wrapper"><div aria-hidden="true" class="prism-editor__line-numbers" style="min-height:20px;"><div class="prism-editor__line-width-calc" style="height:0px;visibility:hidden;pointer-events:none;">
+      999
+    </div><div class="prism-editor__line-number token comment">
+      1
+    </div><div class="prism-editor__line-number token comment">
+      2
+    </div><div class="prism-editor__line-number token comment">
+      3
+    </div><div class="prism-editor__line-number token comment">
+      4
+    </div><div class="prism-editor__line-number token comment">
+      5
+    </div><div class="prism-editor__line-number token comment">
+      6
+    </div><div class="prism-editor__line-number token comment">
+      7
+    </div><div class="prism-editor__line-number token comment">
+      8
+    </div><div class="prism-editor__line-number token comment">
+      9
+    </div><div class="prism-editor__line-number token comment">
+      10
+    </div><div class="prism-editor__line-number token comment">
+      11
+    </div><div class="prism-editor__line-number token comment">
+      12
+    </div><div class="prism-editor__line-number token comment">
+      13
+    </div><div class="prism-editor__line-number token comment">
+      14
+    </div><div class="prism-editor__line-number token comment">
+      15
+    </div><div class="prism-editor__line-number token comment">
+      16
+    </div><div class="prism-editor__line-number token comment">
+      17
+    </div><div class="prism-editor__line-number token comment">
+      18
+    </div><div class="prism-editor__line-number token comment">
+      19
+    </div><div class="prism-editor__line-number token comment">
+      20
+    </div><div class="prism-editor__line-number token comment">
+      21
+    </div><div class="prism-editor__line-number token comment">
+      22
+    </div><div class="prism-editor__line-number token comment">
+      23
+    </div></div><pre contenteditable="true" spellCheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" data-gramm="false" class="prism-editor__code language-html"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span>  <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Click me<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">theme</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Click me<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">theme</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>danger<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Click me<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+	<span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+	
+	methods<span class="token punctuation">:</span><span class="token punctuation">{</span>
+		<span class="token function">handleClick</span><span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+			<span class="token keyword">const</span> vm <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+			vm<span class="token punctuation">.</span>$toast<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">'theme'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+</code></pre></div></div> <div class="online-vue-editor-main-button"><span class="tringle"></span> <span style="display:none;">显示代码</span></div></div></div><h2 id="大小"><a href="#大小" class="header-anchor">#</a> 大小</h2> <div code="&lt;template&gt;
+&lt;div&gt;
+	&lt;div style=&quot;margin: 10px;&quot;&gt;
+        &lt;n-button size=&quot;sm&quot; @click=&quot;handleClick&quot;&gt;Normal&lt;/n-button&gt;
+        &lt;n-button theme=&quot;primary&quot; size=&quot;sm&quot; @click=&quot;handleClick&quot;&gt;Primary&lt;/n-button&gt;
+        &lt;n-button theme=&quot;danger&quot; size=&quot;sm&quot; @click=&quot;handleClick&quot;&gt;Danger&lt;/n-button&gt;
+        &lt;n-button size=&quot;sm&quot; @click=&quot;handleClick&quot; diabled&gt;Disabled&lt;/n-button&gt;
+    &lt;/div&gt;
+
+    &lt;div style=&quot;margin: 10px;&quot;&gt;
+        &lt;n-button size=&quot;md&quot; @click=&quot;handleClick&quot;&gt;Normal&lt;/n-button&gt;
+        &lt;n-button theme=&quot;primary&quot; size=&quot;md&quot; @click=&quot;handleClick&quot;&gt;Primary&lt;/n-button&gt;
+        &lt;n-button theme=&quot;danger&quot; size=&quot;md&quot; @click=&quot;handleClick&quot;&gt;Danger&lt;/n-button&gt;
+        &lt;n-button size=&quot;md&quot; @click=&quot;handleClick&quot; diabled&gt;Disabled&lt;/n-button&gt;
+    &lt;/div&gt;
+
+    &lt;div style=&quot;margin: 10px;&quot;&gt;
+        &lt;n-button size=&quot;lg&quot; @click=&quot;handleClick&quot;&gt;Normal&lt;/n-button&gt;
+        &lt;n-button theme=&quot;primary&quot; size=&quot;lg&quot; @click=&quot;handleClick&quot;&gt;Primary&lt;/n-button&gt;
+        &lt;n-button theme=&quot;danger&quot; size=&quot;lg&quot; @click=&quot;handleClick&quot;&gt;Danger&lt;/n-button&gt;
+        &lt;n-button size=&quot;lg&quot; @click=&quot;handleClick&quot; diabled&gt;Disabled&lt;/n-button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+     
+&lt;/template&gt;
+
+&lt;script&gt;
+    export default {
+		data() {
+        return {
+        }
+    },
+        methods: {
+            handleClick() {
+                this.$toast.info('click!');
+            }
+        }
+    };
+&lt;/script&gt;
+" language="vue" prismLang="html" requires="[object Object]" lang="vue" class="online-vue-editor"><div class="online-vue-editor-preview"><div id="v-6f671ff9"><div style="margin: 10px;"><div class="n-button theme-normal shape-normal size-sm"><button type="submit">Normal</button></div> <div class="n-button theme-primary shape-normal size-sm"><button type="submit">Primary</button></div> <div class="n-button theme-danger shape-normal size-sm"><button type="submit">Danger</button></div> <div diabled="" class="n-button theme-normal shape-normal size-sm"><button type="submit">Disabled</button></div></div> <div style="margin: 10px;"><div class="n-button theme-normal shape-normal size-md"><button type="submit">Normal</button></div> <div class="n-button theme-primary shape-normal size-md"><button type="submit">Primary</button></div> <div class="n-button theme-danger shape-normal size-md"><button type="submit">Danger</button></div> <div diabled="" class="n-button theme-normal shape-normal size-md"><button type="submit">Disabled</button></div></div> <div style="margin: 10px;"><div class="n-button theme-normal shape-normal size-lg"><button type="submit">Normal</button></div> <div class="n-button theme-primary shape-normal size-lg"><button type="submit">Primary</button></div> <div class="n-button theme-danger shape-normal size-lg"><button type="submit">Danger</button></div> <div diabled="" class="n-button theme-normal shape-normal size-lg"><button type="submit">Disabled</button></div></div></div></div> <div class="online-vue-editor-main"><div class="online-vue-editor-main-code" style="display:none;"><span class="copy">COPY</span> <div class="prism-editor-wrapper"><div aria-hidden="true" class="prism-editor__line-numbers" style="min-height:20px;"><div class="prism-editor__line-width-calc" style="height:0px;visibility:hidden;pointer-events:none;">
+      999
+    </div><div class="prism-editor__line-number token comment">
+      1
+    </div><div class="prism-editor__line-number token comment">
+      2
+    </div><div class="prism-editor__line-number token comment">
+      3
+    </div><div class="prism-editor__line-number token comment">
+      4
+    </div><div class="prism-editor__line-number token comment">
+      5
+    </div><div class="prism-editor__line-number token comment">
+      6
+    </div><div class="prism-editor__line-number token comment">
+      7
+    </div><div class="prism-editor__line-number token comment">
+      8
+    </div><div class="prism-editor__line-number token comment">
+      9
+    </div><div class="prism-editor__line-number token comment">
+      10
+    </div><div class="prism-editor__line-number token comment">
+      11
+    </div><div class="prism-editor__line-number token comment">
+      12
+    </div><div class="prism-editor__line-number token comment">
+      13
+    </div><div class="prism-editor__line-number token comment">
+      14
+    </div><div class="prism-editor__line-number token comment">
+      15
+    </div><div class="prism-editor__line-number token comment">
+      16
+    </div><div class="prism-editor__line-number token comment">
+      17
+    </div><div class="prism-editor__line-number token comment">
+      18
+    </div><div class="prism-editor__line-number token comment">
+      19
+    </div><div class="prism-editor__line-number token comment">
+      20
+    </div><div class="prism-editor__line-number token comment">
+      21
+    </div><div class="prism-editor__line-number token comment">
+      22
+    </div><div class="prism-editor__line-number token comment">
+      23
+    </div><div class="prism-editor__line-number token comment">
+      24
+    </div><div class="prism-editor__line-number token comment">
+      25
+    </div><div class="prism-editor__line-number token comment">
+      26
+    </div><div class="prism-editor__line-number token comment">
+      27
+    </div><div class="prism-editor__line-number token comment">
+      28
+    </div><div class="prism-editor__line-number token comment">
+      29
+    </div><div class="prism-editor__line-number token comment">
+      30
+    </div><div class="prism-editor__line-number token comment">
+      31
+    </div><div class="prism-editor__line-number token comment">
+      32
+    </div><div class="prism-editor__line-number token comment">
+      33
+    </div><div class="prism-editor__line-number token comment">
+      34
+    </div><div class="prism-editor__line-number token comment">
+      35
+    </div><div class="prism-editor__line-number token comment">
+      36
+    </div><div class="prism-editor__line-number token comment">
+      37
+    </div><div class="prism-editor__line-number token comment">
+      38
+    </div><div class="prism-editor__line-number token comment">
+      39
+    </div></div><pre contenteditable="true" spellCheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" data-gramm="false" class="prism-editor__code language-html"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">margin</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sm<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Normal<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">theme</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sm<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Primary<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">theme</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>danger<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sm<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Danger<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sm<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span> <span class="token attr-name">diabled</span><span class="token punctuation">></span></span>Disabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">margin</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>md<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Normal<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">theme</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>md<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Primary<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">theme</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>danger<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>md<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Danger<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>md<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span> <span class="token attr-name">diabled</span><span class="token punctuation">></span></span>Disabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">margin</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>lg<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Normal<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">theme</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>lg<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Primary<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">theme</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>danger<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>lg<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Danger<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>lg<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span> <span class="token attr-name">diabled</span><span class="token punctuation">></span></span>Disabled<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+     
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+		<span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            <span class="token function">handleClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>$toast<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">'click!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+</code></pre></div></div> <div class="online-vue-editor-main-button"><span class="tringle"></span> <span style="display:none;">显示代码</span></div></div></div><h2 id="形状"><a href="#形状" class="header-anchor">#</a> 形状</h2> <div code="&lt;template&gt;
+	&lt;div&gt;
+     &lt;div style=&quot;margin: 10px;&quot;&gt;
+        &lt;n-button size=&quot;sm&quot; @click=&quot;handleClick&quot;&gt;Normal&lt;/n-button&gt;
+        &lt;n-button shape=&quot;round&quot; size=&quot;sm&quot; @click=&quot;handleClick&quot;&gt;Round&lt;/n-button&gt;
+        &lt;n-button shape=&quot;icon&quot; size=&quot;sm&quot; @click=&quot;handleClick&quot;&gt;
+            &lt;i class=&quot;n-icon-love&quot;&gt;&lt;/i&gt;
+        &lt;/n-button&gt;
+        &lt;n-button shape=&quot;simple&quot; size=&quot;sm&quot; @click=&quot;handleClick&quot;&gt;Simple&lt;/n-button&gt;
+        &lt;n-button shape=&quot;link&quot; size=&quot;sm&quot; @click=&quot;handleClick&quot;&gt;Link&lt;/n-button&gt;
+    &lt;/div&gt;
+    &lt;div style=&quot;margin: 10px;&quot;&gt;
+        &lt;n-button @click=&quot;handleClick&quot;&gt;Normal&lt;/n-button&gt;
+        &lt;n-button shape=&quot;round&quot; @click=&quot;handleClick&quot;&gt;Round&lt;/n-button&gt;
+        &lt;n-button shape=&quot;icon&quot; @click=&quot;handleClick&quot;&gt;
+            &lt;i class=&quot;n-icon-love&quot;&gt;&lt;/i&gt;
+        &lt;/n-button&gt;
+        &lt;n-button shape=&quot;simple&quot; @click=&quot;handleClick&quot;&gt;Simple&lt;/n-button&gt;
+        &lt;n-button shape=&quot;link&quot; @click=&quot;handleClick&quot;&gt;Link&lt;/n-button&gt;
+    &lt;/div&gt;
+    &lt;div style=&quot;margin: 10px;&quot;&gt;
+        &lt;n-button size=&quot;lg&quot; @click=&quot;handleClick&quot;&gt;Normal&lt;/n-button&gt;
+        &lt;n-button shape=&quot;round&quot; size=&quot;lg&quot; @click=&quot;handleClick&quot;&gt;Round&lt;/n-button&gt;
+        &lt;n-button shape=&quot;icon&quot; size=&quot;lg&quot; @click=&quot;handleClick&quot;&gt;
+            &lt;i class=&quot;n-icon-love&quot;&gt;&lt;/i&gt;
+        &lt;/n-button&gt;
+        &lt;n-button shape=&quot;simple&quot; size=&quot;lg&quot; @click=&quot;handleClick&quot;&gt;Simple&lt;/n-button&gt;
+        &lt;n-button shape=&quot;link&quot; size=&quot;lg&quot; @click=&quot;handleClick&quot;&gt;Link&lt;/n-button&gt;
+    &lt;/div&gt;
+    &lt;div style=&quot;margin: 10px;&quot;&gt;
+        &lt;n-button shape=&quot;block&quot; size=&quot;sm&quot; @click=&quot;handleClick&quot;&gt;Block&lt;/n-button&gt;
+    &lt;/div&gt;
+    &lt;div style=&quot;margin: 10px;&quot;&gt;
+        &lt;n-button shape=&quot;block&quot; @click=&quot;handleClick&quot;&gt;Block&lt;/n-button&gt;
+    &lt;/div&gt;
+    &lt;div style=&quot;margin: 10px;&quot;&gt;
+        &lt;n-button shape=&quot;block&quot; size=&quot;lg&quot; @click=&quot;handleClick&quot;&gt;Block&lt;/n-button&gt;
+    &lt;/div&gt;
+	&lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+    export default {
+		data() {
+        return {
+        }
+    },
+        methods: {
+            handleClick() {
+                this.$toast.info('click!');
+            }
+        }
+    };
+&lt;/script&gt;
+" language="vue" prismLang="html" requires="[object Object]" lang="vue" class="online-vue-editor"><div class="online-vue-editor-preview"><div id="v-7c9f6353"><div style="margin: 10px;"><div class="n-button theme-normal shape-normal size-sm"><button type="submit">Normal</button></div> <div class="n-button theme-normal shape-round size-sm"><button type="submit">Round</button></div> <div class="n-button theme-normal shape-icon size-sm"><button type="submit"><i class="n-icon-love"></i></button></div> <div class="n-button theme-normal shape-simple size-sm"><button type="submit">Simple</button></div> <div class="n-button theme-normal shape-link size-sm"><button type="submit">Link</button></div></div> <div style="margin: 10px;"><div class="n-button theme-normal shape-normal size-md"><button type="submit">Normal</button></div> <div class="n-button theme-normal shape-round size-md"><button type="submit">Round</button></div> <div class="n-button theme-normal shape-icon size-md"><button type="submit"><i class="n-icon-love"></i></button></div> <div class="n-button theme-normal shape-simple size-md"><button type="submit">Simple</button></div> <div class="n-button theme-normal shape-link size-md"><button type="submit">Link</button></div></div> <div style="margin: 10px;"><div class="n-button theme-normal shape-normal size-lg"><button type="submit">Normal</button></div> <div class="n-button theme-normal shape-round size-lg"><button type="submit">Round</button></div> <div class="n-button theme-normal shape-icon size-lg"><button type="submit"><i class="n-icon-love"></i></button></div> <div class="n-button theme-normal shape-simple size-lg"><button type="submit">Simple</button></div> <div class="n-button theme-normal shape-link size-lg"><button type="submit">Link</button></div></div> <div style="margin: 10px;"><div class="n-button theme-normal shape-block size-sm"><button type="submit">Block</button></div></div> <div style="margin: 10px;"><div class="n-button theme-normal shape-block size-md"><button type="submit">Block</button></div></div> <div style="margin: 10px;"><div class="n-button theme-normal shape-block size-lg"><button type="submit">Block</button></div></div></div></div> <div class="online-vue-editor-main"><div class="online-vue-editor-main-code" style="display:none;"><span class="copy">COPY</span> <div class="prism-editor-wrapper"><div aria-hidden="true" class="prism-editor__line-numbers" style="min-height:20px;"><div class="prism-editor__line-width-calc" style="height:0px;visibility:hidden;pointer-events:none;">
+      999
+    </div><div class="prism-editor__line-number token comment">
+      1
+    </div><div class="prism-editor__line-number token comment">
+      2
+    </div><div class="prism-editor__line-number token comment">
+      3
+    </div><div class="prism-editor__line-number token comment">
+      4
+    </div><div class="prism-editor__line-number token comment">
+      5
+    </div><div class="prism-editor__line-number token comment">
+      6
+    </div><div class="prism-editor__line-number token comment">
+      7
+    </div><div class="prism-editor__line-number token comment">
+      8
+    </div><div class="prism-editor__line-number token comment">
+      9
+    </div><div class="prism-editor__line-number token comment">
+      10
+    </div><div class="prism-editor__line-number token comment">
+      11
+    </div><div class="prism-editor__line-number token comment">
+      12
+    </div><div class="prism-editor__line-number token comment">
+      13
+    </div><div class="prism-editor__line-number token comment">
+      14
+    </div><div class="prism-editor__line-number token comment">
+      15
+    </div><div class="prism-editor__line-number token comment">
+      16
+    </div><div class="prism-editor__line-number token comment">
+      17
+    </div><div class="prism-editor__line-number token comment">
+      18
+    </div><div class="prism-editor__line-number token comment">
+      19
+    </div><div class="prism-editor__line-number token comment">
+      20
+    </div><div class="prism-editor__line-number token comment">
+      21
+    </div><div class="prism-editor__line-number token comment">
+      22
+    </div><div class="prism-editor__line-number token comment">
+      23
+    </div><div class="prism-editor__line-number token comment">
+      24
+    </div><div class="prism-editor__line-number token comment">
+      25
+    </div><div class="prism-editor__line-number token comment">
+      26
+    </div><div class="prism-editor__line-number token comment">
+      27
+    </div><div class="prism-editor__line-number token comment">
+      28
+    </div><div class="prism-editor__line-number token comment">
+      29
+    </div><div class="prism-editor__line-number token comment">
+      30
+    </div><div class="prism-editor__line-number token comment">
+      31
+    </div><div class="prism-editor__line-number token comment">
+      32
+    </div><div class="prism-editor__line-number token comment">
+      33
+    </div><div class="prism-editor__line-number token comment">
+      34
+    </div><div class="prism-editor__line-number token comment">
+      35
+    </div><div class="prism-editor__line-number token comment">
+      36
+    </div><div class="prism-editor__line-number token comment">
+      37
+    </div><div class="prism-editor__line-number token comment">
+      38
+    </div><div class="prism-editor__line-number token comment">
+      39
+    </div><div class="prism-editor__line-number token comment">
+      40
+    </div><div class="prism-editor__line-number token comment">
+      41
+    </div><div class="prism-editor__line-number token comment">
+      42
+    </div><div class="prism-editor__line-number token comment">
+      43
+    </div><div class="prism-editor__line-number token comment">
+      44
+    </div><div class="prism-editor__line-number token comment">
+      45
+    </div><div class="prism-editor__line-number token comment">
+      46
+    </div><div class="prism-editor__line-number token comment">
+      47
+    </div><div class="prism-editor__line-number token comment">
+      48
+    </div><div class="prism-editor__line-number token comment">
+      49
+    </div><div class="prism-editor__line-number token comment">
+      50
+    </div><div class="prism-editor__line-number token comment">
+      51
+    </div><div class="prism-editor__line-number token comment">
+      52
+    </div><div class="prism-editor__line-number token comment">
+      53
+    </div><div class="prism-editor__line-number token comment">
+      54
+    </div></div><pre contenteditable="true" spellCheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" data-gramm="false" class="prism-editor__code language-html"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">margin</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sm<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Normal<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">shape</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>round<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sm<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Round<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">shape</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>icon<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sm<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>n-icon-love<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">shape</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>simple<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sm<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Simple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">shape</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>link<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sm<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Link<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">margin</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Normal<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">shape</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>round<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Round<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">shape</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>icon<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>n-icon-love<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">shape</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>simple<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Simple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">shape</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>link<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Link<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">margin</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>lg<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Normal<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">shape</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>round<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>lg<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Round<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">shape</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>icon<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>lg<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>n-icon-love<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">shape</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>simple<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>lg<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Simple<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">shape</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>link<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>lg<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Link<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">margin</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">shape</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sm<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Block<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">margin</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">shape</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Block<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">margin</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">shape</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>block<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>lg<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Block<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+		<span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            <span class="token function">handleClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>$toast<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">'click!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+</code></pre></div></div> <div class="online-vue-editor-main-button"><span class="tringle"></span> <span style="display:none;">显示代码</span></div></div></div><h2 id="定制-style"><a href="#定制-style" class="header-anchor">#</a> 定制 style</h2> <div code="&lt;template&gt;
+	&lt;div&gt;
+		&lt;n-button @click=&quot;handleClick&quot;&gt;Normal&lt;/n-button&gt;
+		&lt;n-button :btn-style=&quot;btnStyle&quot; @click=&quot;handleClick&quot;&gt;Customized&lt;/n-button&gt;
+	&lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+    export default {
+        data() {
+            return {
+                btnStyle: {
+                    color: 'white',
+                    backgroundColor: '#00bcd4',
+                    border: 'none'
+                }
+            }
+        },
+
+        methods: {
+            handleClick() {
+                this.$toast.info('按钮被点击!');
+            }
+        }
+    };
+&lt;/script&gt;
+" language="vue" prismLang="html" requires="[object Object]" lang="vue" class="online-vue-editor"><div class="online-vue-editor-preview"><div id="v-0e845e9c"><div class="n-button theme-normal shape-normal size-md"><button type="submit">Normal</button></div> <div class="n-button theme-normal shape-normal size-md"><button type="submit" style="color:white;background-color:#00bcd4;border:none;">Customized</button></div></div></div> <div class="online-vue-editor-main"><div class="online-vue-editor-main-code" style="display:none;"><span class="copy">COPY</span> <div class="prism-editor-wrapper"><div aria-hidden="true" class="prism-editor__line-numbers" style="min-height:20px;"><div class="prism-editor__line-width-calc" style="height:0px;visibility:hidden;pointer-events:none;">
+      999
+    </div><div class="prism-editor__line-number token comment">
+      1
+    </div><div class="prism-editor__line-number token comment">
+      2
+    </div><div class="prism-editor__line-number token comment">
+      3
+    </div><div class="prism-editor__line-number token comment">
+      4
+    </div><div class="prism-editor__line-number token comment">
+      5
+    </div><div class="prism-editor__line-number token comment">
+      6
+    </div><div class="prism-editor__line-number token comment">
+      7
+    </div><div class="prism-editor__line-number token comment">
+      8
+    </div><div class="prism-editor__line-number token comment">
+      9
+    </div><div class="prism-editor__line-number token comment">
+      10
+    </div><div class="prism-editor__line-number token comment">
+      11
+    </div><div class="prism-editor__line-number token comment">
+      12
+    </div><div class="prism-editor__line-number token comment">
+      13
+    </div><div class="prism-editor__line-number token comment">
+      14
+    </div><div class="prism-editor__line-number token comment">
+      15
+    </div><div class="prism-editor__line-number token comment">
+      16
+    </div><div class="prism-editor__line-number token comment">
+      17
+    </div><div class="prism-editor__line-number token comment">
+      18
+    </div><div class="prism-editor__line-number token comment">
+      19
+    </div><div class="prism-editor__line-number token comment">
+      20
+    </div><div class="prism-editor__line-number token comment">
+      21
+    </div><div class="prism-editor__line-number token comment">
+      22
+    </div><div class="prism-editor__line-number token comment">
+      23
+    </div><div class="prism-editor__line-number token comment">
+      24
+    </div><div class="prism-editor__line-number token comment">
+      25
+    </div><div class="prism-editor__line-number token comment">
+      26
+    </div></div><pre contenteditable="true" spellCheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" data-gramm="false" class="prism-editor__code language-html"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Normal<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>n-button</span> <span class="token attr-name">:btn-</span><span class="token style-attr language-css"><span class="token attr-name"><span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value">btnStyle</span><span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Customized<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>n-button</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+    <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+        <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token punctuation">{</span>
+                btnStyle<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                    color<span class="token punctuation">:</span> <span class="token string">'white'</span><span class="token punctuation">,</span>
+                    backgroundColor<span class="token punctuation">:</span> <span class="token string">'#00bcd4'</span><span class="token punctuation">,</span>
+                    border<span class="token punctuation">:</span> <span class="token string">'none'</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+        methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            <span class="token function">handleClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>$toast<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">'按钮被点击!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+</code></pre></div></div> <div class="online-vue-editor-main-button"><span class="tringle"></span> <span style="display:none;">显示代码</span></div></div></div><h2 id="usage"><a href="#usage" class="header-anchor">#</a> usage</h2> <h4 id="props"><a href="#props" class="header-anchor">#</a> Props</h4> <table><thead><tr><th style="text-align:center;">Name</th> <th style="text-align:center;">Type</th> <th style="text-align:center;">Desc</th></tr></thead> <tbody><tr><td style="text-align:center;">autofocus</td> <td style="text-align:center;">Boolean</td> <td style="text-align:center;">是否自动地获得焦点， 默认为 false</td></tr> <tr><td style="text-align:center;">btn-style</td> <td style="text-align:center;">Object</td> <td style="text-align:center;">自定义按钮的样式</td></tr> <tr><td style="text-align:center;">disabled</td> <td style="text-align:center;">Boolean</td> <td style="text-align:center;">是否禁用，默认为 false</td></tr> <tr><td style="text-align:center;">name</td> <td style="text-align:center;">String</td> <td style="text-align:center;">button name，默认为 null</td></tr> <tr><td style="text-align:center;">shape</td> <td style="text-align:center;">String</td> <td style="text-align:center;">按钮的形状，可选值为 'block'、'normal'、'icon'、'link'、'round'、'simple'，默认为 'normal'</td></tr> <tr><td style="text-align:center;">size</td> <td style="text-align:center;">String</td> <td style="text-align:center;">按钮的大小，可选值为 'sm'、'md'、'lg'，默认为 'md'</td></tr> <tr><td style="text-align:center;">theme</td> <td style="text-align:center;">String</td> <td style="text-align:center;">按钮的主题，可选值为 'normal'、'danger'、'primary'，默认为 'normal'</td></tr> <tr><td style="text-align:center;">type</td> <td style="text-align:center;">String</td> <td style="text-align:center;">按钮的类型，可选值为 'button'、'reset'、'submit'，默认为 'submit'</td></tr></tbody></table> <h4 id="events"><a href="#events" class="header-anchor">#</a> Events</h4> <table><thead><tr><th style="text-align:center;">Name</th> <th style="text-align:center;">Type</th> <th style="text-align:center;">Desc</th></tr></thead> <tbody><tr><td style="text-align:center;">click</td> <td style="text-align:center;">(value: any) =&gt; void</td> <td style="text-align:center;">model event, 点击按钮时触发</td></tr></tbody></table></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">6/10/2020, 3:21:36 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/n-ui/comp/n-card.html" class="prev">Card 卡片</a></span> <span class="next"><a href="/n-ui/comp/n-icon.html">Icon 图标</a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/n-ui/assets/js/app.49250d1e.js" defer></script><script src="/n-ui/assets/js/3.61f0e775.js" defer></script><script src="/n-ui/assets/js/10.2468cf35.js" defer></script><script src="/n-ui/assets/js/4.db85590f.js" defer></script>
+  </body>
+</html>
