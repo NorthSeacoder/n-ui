@@ -1,0 +1,45 @@
+@charset "UTF-8";
+@import '../common/var';
+@import '../mixins/mixins';
+
+@include b(form-group) {
+    .required-star {
+        color: $red;
+    }
+
+    &.n-form-group-block {
+        display: block;
+
+        input,
+        textarea {
+            width: 100%;
+        }
+    }
+
+    &.n-form-group-label-horizontal {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        label {
+            padding-top: 8px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+        }
+
+        .n-form-group-label-wrap {
+            flex: 1;
+        }
+
+        .n-form-group-input-wrap {
+            flex: 4;
+        }
+
+        @media screen and (max-width: $tablet-min) {
+            display: block;
+        }
+    }
+}

@@ -1,7 +1,5 @@
----
-title: n-input
----
-# n-input
+
+# Input输入框
 
 ## 基本使用
 

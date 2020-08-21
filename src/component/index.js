@@ -1,4 +1,5 @@
 //import
+import NFormGroup from './n-form-group';
 import NInput from './n-input';
 import NSelect from './n-select';
 import NLayout from './n-layout';
@@ -8,6 +9,7 @@ import NButton from './n-button';
 
 const components = {
     //component
+	NFormGroup,
 	NInput,
 	NSelect,
 	NLayout,

@@ -1,3 +1,9 @@
 {
-    "n-button": "packages/n-button/index.js"
+    "n-button": "component/n-button/index.js",
+    "n-calendar": "component/n-calendar/index.js",
+    "n-card": "component/n-card/index.js",
+    "n-form-group": "component/n-form-group/index.js",
+    "n-input": "component/n-input/index.js",
+    "n-layout": "component/n-layout/index.js",
+    "n-select": "component/n-select/index.js"
   }

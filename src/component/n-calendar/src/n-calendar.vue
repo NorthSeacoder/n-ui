@@ -43,7 +43,7 @@ import {changeOption} from './utils';
 import DateTable from './date-table.vue';
 
 export default {
-    name: 'Calendar',
+    name: 'NCalendar',
 
     components: {
         DateTable

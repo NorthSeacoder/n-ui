@@ -183,7 +183,7 @@ export default {
     };
 </script>
 ```
-## usage
+## API
 #### Props
 
 |Name|Type|Desc|

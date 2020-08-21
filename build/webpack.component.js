@@ -10,7 +10,6 @@ let entries = {}
 Object.keys(components).forEach(key => {
   entries[key] = path.join(basePath, 'src', components[key])
 })
-
 module.exports = merge(webpackBaseConfig, {
   devtool: 'source-map',
   mode: "production",

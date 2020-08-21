@@ -1,5 +1,5 @@
-import NUI from '@/index.js'
-import "@/styles/index.scss"
+import NUI from '@/n-ui.min.js'
+import "@/styles/n-ui.css"
 
 export default ({
   Vue,
